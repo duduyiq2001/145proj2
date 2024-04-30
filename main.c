@@ -11,8 +11,10 @@
 int main(void)
 {
     /* Replace with your application code */
+    DDRB = 0; 
     while (1) 
     {
+        
     }
 }
 
