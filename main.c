@@ -58,6 +58,7 @@ void test_clock(){
 	init_dt(&clock);
 	print_dt(&clock);
 	while(1){
+		avr_wait(1000);
 		advance_dt(&clock);
 		print_dt(&clock);
 	}
