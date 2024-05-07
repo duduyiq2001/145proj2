@@ -3,55 +3,55 @@ GccApplication2.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         00000154  00000000  00000000  00000054  2**1
+  0 .text         0000018e  00000000  00000000  00000054  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         00000000  00800060  00800060  000001a8  2**0
+  1 .data         00000000  00800060  00800060  000001e2  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .comment      00000030  00000000  00000000  000001a8  2**0
+  2 .comment      00000030  00000000  00000000  000001e2  2**0
                   CONTENTS, READONLY
-  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000001d8  2**2
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000214  2**2
                   CONTENTS, READONLY
-  4 .debug_aranges 00000088  00000000  00000000  00000214  2**0
+  4 .debug_aranges 00000098  00000000  00000000  00000250  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_info   0000090d  00000000  00000000  0000029c  2**0
+  5 .debug_info   00000b07  00000000  00000000  000002e8  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_abbrev 000006a2  00000000  00000000  00000ba9  2**0
+  6 .debug_abbrev 00000735  00000000  00000000  00000def  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_line   0000047a  00000000  00000000  0000124b  2**0
+  7 .debug_line   000004eb  00000000  00000000  00001524  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_frame  000000dc  00000000  00000000  000016c8  2**2
+  8 .debug_frame  00000114  00000000  00000000  00001a10  2**2
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_str    00000369  00000000  00000000  000017a4  2**0
+  9 .debug_str    000003d5  00000000  00000000  00001b24  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_loc    00000164  00000000  00000000  00001b0d  2**0
+ 10 .debug_loc    000001c5  00000000  00000000  00001ef9  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_ranges 00000058  00000000  00000000  00001c71  2**0
+ 11 .debug_ranges 00000068  00000000  00000000  000020be  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
 
 00000000 <__vectors>:
    0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
-   4:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-   8:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-   c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  10:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  14:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  18:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  1c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  20:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  24:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  28:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  2c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  30:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  34:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  38:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  3c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  40:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  44:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  48:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  4c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  50:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+   4:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+   8:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+   c:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  10:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  14:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  18:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  1c:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  20:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  24:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  28:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  2c:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  30:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  34:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  38:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  3c:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  40:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  44:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  48:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  4c:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  50:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
 
 00000054 <__ctors_end>:
   54:	11 24       	eor	r1, r1
@@ -60,215 +60,237 @@ Disassembly of section .text:
   5a:	d8 e0       	ldi	r29, 0x08	; 8
   5c:	de bf       	out	0x3e, r29	; 62
   5e:	cd bf       	out	0x3d, r28	; 61
-  60:	0e 94 36 00 	call	0x6c	; 0x6c <main>
-  64:	0c 94 a8 00 	jmp	0x150	; 0x150 <_exit>
 
-00000068 <__bad_interrupt>:
-  68:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+00000060 <__do_copy_data>:
+  60:	10 e0       	ldi	r17, 0x00	; 0
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	ee e8       	ldi	r30, 0x8E	; 142
+  68:	f1 e0       	ldi	r31, 0x01	; 1
+  6a:	02 c0       	rjmp	.+4      	; 0x70 <__do_copy_data+0x10>
+  6c:	05 90       	lpm	r0, Z+
+  6e:	0d 92       	st	X+, r0
+  70:	a0 36       	cpi	r26, 0x60	; 96
+  72:	b1 07       	cpc	r27, r17
+  74:	d9 f7       	brne	.-10     	; 0x6c <__do_copy_data+0xc>
+  76:	0e 94 51 00 	call	0xa2	; 0xa2 <main>
+  7a:	0c 94 c5 00 	jmp	0x18a	; 0x18a <_exit>
 
-0000006c <main>:
+0000007e <__bad_interrupt>:
+  7e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000082 <test_keypad>:
+	DateTime clock;
+	init_dt(&clock);
+	print_dt(&clock);
+	while(1){
+		advance_dt(&clock);
+		print_dt(&clock);
+  82:	82 e0       	ldi	r24, 0x02	; 2
+  84:	87 bb       	out	0x17, r24	; 23
+  86:	18 ba       	out	0x18, r1	; 24
+  88:	02 c0       	rjmp	.+4      	; 0x8e <test_keypad+0xc>
+  8a:	82 e0       	ldi	r24, 0x02	; 2
+  8c:	88 bb       	out	0x18, r24	; 24
+  8e:	63 e0       	ldi	r22, 0x03	; 3
+  90:	70 e0       	ldi	r23, 0x00	; 0
+  92:	83 e0       	ldi	r24, 0x03	; 3
+  94:	90 e0       	ldi	r25, 0x00	; 0
+  96:	0e 94 8a 00 	call	0x114	; 0x114 <is_pressed>
+  9a:	89 2b       	or	r24, r25
+  9c:	b1 f7       	brne	.-20     	; 0x8a <test_keypad+0x8>
+  9e:	18 ba       	out	0x18, r1	; 24
+  a0:	f6 cf       	rjmp	.-20     	; 0x8e <test_keypad+0xc>
+
+000000a2 <main>:
+	}
 }
-
 int main(void)
 {
-    /* Replace with your application code */
-    DDRB = 0x02; 
-  6c:	82 e0       	ldi	r24, 0x02	; 2
-  6e:	87 bb       	out	0x17, r24	; 23
-	PORTB = 0;
-  70:	18 ba       	out	0x18, r1	; 24
-  72:	02 c0       	rjmp	.+4      	; 0x78 <main+0xc>
-    while (1) 
-    {
-        //int a = get_key();
-		while(is_pressed(3,3)){
-			PORTB = 0X02;
-  74:	82 e0       	ldi	r24, 0x02	; 2
-  76:	88 bb       	out	0x18, r24	; 24
-    DDRB = 0x02; 
-	PORTB = 0;
-    while (1) 
-    {
-        //int a = get_key();
-		while(is_pressed(3,3)){
-  78:	63 e0       	ldi	r22, 0x03	; 3
-  7a:	70 e0       	ldi	r23, 0x00	; 0
-  7c:	83 e0       	ldi	r24, 0x03	; 3
-  7e:	90 e0       	ldi	r25, 0x00	; 0
-  80:	0e 94 7d 00 	call	0xfa	; 0xfa <is_pressed>
-  84:	89 2b       	or	r24, r25
-  86:	b1 f7       	brne	.-20     	; 0x74 <main+0x8>
-			PORTB = 0X02;
-		}
-	   PORTB = 0; 		
-  88:	18 ba       	out	0x18, r1	; 24
-	}
-  8a:	f6 cf       	rjmp	.-20     	; 0x78 <main+0xc>
+   if(TESTKEY){
+	   test_keypad();
+  a2:	0e 94 41 00 	call	0x82	; 0x82 <test_keypad>
 
-0000008c <set_port>:
+000000a6 <set_port>:
  */ 
 #include "utility.h"
 #include <avr/io.h>
 
 void set_port(char* portname, char portnum){
 	*portname = *portname | 0x01 << portnum;
-  8c:	fc 01       	movw	r30, r24
-  8e:	40 81       	ld	r20, Z
-  90:	21 e0       	ldi	r18, 0x01	; 1
-  92:	30 e0       	ldi	r19, 0x00	; 0
-  94:	02 c0       	rjmp	.+4      	; 0x9a <set_port+0xe>
-  96:	22 0f       	add	r18, r18
-  98:	33 1f       	adc	r19, r19
-  9a:	6a 95       	dec	r22
-  9c:	e2 f7       	brpl	.-8      	; 0x96 <set_port+0xa>
-  9e:	24 2b       	or	r18, r20
-  a0:	20 83       	st	Z, r18
-  a2:	08 95       	ret
+  a6:	fc 01       	movw	r30, r24
+  a8:	40 81       	ld	r20, Z
+  aa:	21 e0       	ldi	r18, 0x01	; 1
+  ac:	30 e0       	ldi	r19, 0x00	; 0
+  ae:	02 c0       	rjmp	.+4      	; 0xb4 <set_port+0xe>
+  b0:	22 0f       	add	r18, r18
+  b2:	33 1f       	adc	r19, r19
+  b4:	6a 95       	dec	r22
+  b6:	e2 f7       	brpl	.-8      	; 0xb0 <set_port+0xa>
+  b8:	24 2b       	or	r18, r20
+  ba:	20 83       	st	Z, r18
+  bc:	08 95       	ret
 
-000000a4 <clear_port>:
+000000be <clear_port>:
 	
 }
 
 void clear_port(char* portname, char portnum){
-  a4:	fc 01       	movw	r30, r24
+  be:	fc 01       	movw	r30, r24
 	*portname = *portname & (~(0x01 << portnum));
-  a6:	90 81       	ld	r25, Z
-  a8:	21 e0       	ldi	r18, 0x01	; 1
-  aa:	30 e0       	ldi	r19, 0x00	; 0
-  ac:	02 c0       	rjmp	.+4      	; 0xb2 <clear_port+0xe>
-  ae:	22 0f       	add	r18, r18
-  b0:	33 1f       	adc	r19, r19
-  b2:	6a 95       	dec	r22
-  b4:	e2 f7       	brpl	.-8      	; 0xae <clear_port+0xa>
-  b6:	20 95       	com	r18
-  b8:	29 23       	and	r18, r25
-  ba:	20 83       	st	Z, r18
-  bc:	08 95       	ret
+  c0:	90 81       	ld	r25, Z
+  c2:	21 e0       	ldi	r18, 0x01	; 1
+  c4:	30 e0       	ldi	r19, 0x00	; 0
+  c6:	02 c0       	rjmp	.+4      	; 0xcc <clear_port+0xe>
+  c8:	22 0f       	add	r18, r18
+  ca:	33 1f       	adc	r19, r19
+  cc:	6a 95       	dec	r22
+  ce:	e2 f7       	brpl	.-8      	; 0xc8 <clear_port+0xa>
+  d0:	20 95       	com	r18
+  d2:	29 23       	and	r18, r25
+  d4:	20 83       	st	Z, r18
+  d6:	08 95       	ret
 
-000000be <get_pin>:
+000000d8 <get_pin>:
 	
 }
 
 char get_pin(char* portname, char portnum){
 	
 	return *portname & 0x01 << portnum;
-  be:	21 e0       	ldi	r18, 0x01	; 1
-  c0:	30 e0       	ldi	r19, 0x00	; 0
-  c2:	02 c0       	rjmp	.+4      	; 0xc8 <get_pin+0xa>
-  c4:	22 0f       	add	r18, r18
-  c6:	33 1f       	adc	r19, r19
-  c8:	6a 95       	dec	r22
-  ca:	e2 f7       	brpl	.-8      	; 0xc4 <get_pin+0x6>
-  cc:	fc 01       	movw	r30, r24
-  ce:	80 81       	ld	r24, Z
+  d8:	21 e0       	ldi	r18, 0x01	; 1
+  da:	30 e0       	ldi	r19, 0x00	; 0
+  dc:	02 c0       	rjmp	.+4      	; 0xe2 <get_pin+0xa>
+  de:	22 0f       	add	r18, r18
+  e0:	33 1f       	adc	r19, r19
+  e2:	6a 95       	dec	r22
+  e4:	e2 f7       	brpl	.-8      	; 0xde <get_pin+0x6>
+  e6:	fc 01       	movw	r30, r24
+  e8:	80 81       	ld	r24, Z
 }
-  d0:	82 23       	and	r24, r18
-  d2:	08 95       	ret
+  ea:	82 23       	and	r24, r18
+  ec:	08 95       	ret
 
-000000d4 <wait_avr>:
+000000ee <wait_avr>:
 
 void wait_avr(unsigned short msec){
 	TCCR0 = 3;
-  d4:	23 e0       	ldi	r18, 0x03	; 3
-  d6:	23 bf       	out	0x33, r18	; 51
+  ee:	23 e0       	ldi	r18, 0x03	; 3
+  f0:	23 bf       	out	0x33, r18	; 51
 	while(msec --){
-  d8:	09 c0       	rjmp	.+18     	; 0xec <wait_avr+0x18>
+  f2:	09 c0       	rjmp	.+18     	; 0x106 <wait_avr+0x18>
 		TCNT0 = (unsigned char)(256 - (XTAL_FRQ/64)*0.001);
-  da:	83 e8       	ldi	r24, 0x83	; 131
-  dc:	82 bf       	out	0x32, r24	; 50
+  f4:	83 e8       	ldi	r24, 0x83	; 131
+  f6:	82 bf       	out	0x32, r24	; 50
 		SET_BIT(TIFR, TOV0);
-  de:	88 b7       	in	r24, 0x38	; 56
-  e0:	81 60       	ori	r24, 0x01	; 1
-  e2:	88 bf       	out	0x38, r24	; 56
+  f8:	88 b7       	in	r24, 0x38	; 56
+  fa:	81 60       	ori	r24, 0x01	; 1
+  fc:	88 bf       	out	0x38, r24	; 56
 		while(!GET_BIT(TIFR, TOV0));
-  e4:	08 b6       	in	r0, 0x38	; 56
-  e6:	00 fe       	sbrs	r0, 0
-  e8:	fd cf       	rjmp	.-6      	; 0xe4 <wait_avr+0x10>
+  fe:	08 b6       	in	r0, 0x38	; 56
+ 100:	00 fe       	sbrs	r0, 0
+ 102:	fd cf       	rjmp	.-6      	; 0xfe <wait_avr+0x10>
 	return *portname & 0x01 << portnum;
 }
 
 void wait_avr(unsigned short msec){
 	TCCR0 = 3;
 	while(msec --){
-  ea:	c9 01       	movw	r24, r18
-  ec:	9c 01       	movw	r18, r24
-  ee:	21 50       	subi	r18, 0x01	; 1
-  f0:	31 09       	sbc	r19, r1
-  f2:	89 2b       	or	r24, r25
-  f4:	91 f7       	brne	.-28     	; 0xda <wait_avr+0x6>
+ 104:	c9 01       	movw	r24, r18
+ 106:	9c 01       	movw	r18, r24
+ 108:	21 50       	subi	r18, 0x01	; 1
+ 10a:	31 09       	sbc	r19, r1
+ 10c:	89 2b       	or	r24, r25
+ 10e:	91 f7       	brne	.-28     	; 0xf4 <wait_avr+0x6>
 		TCNT0 = (unsigned char)(256 - (XTAL_FRQ/64)*0.001);
 		SET_BIT(TIFR, TOV0);
 		while(!GET_BIT(TIFR, TOV0));
 	}
 	TCCR0 = 0;
-  f6:	13 be       	out	0x33, r1	; 51
-  f8:	08 95       	ret
+ 110:	13 be       	out	0x33, r1	; 51
+ 112:	08 95       	ret
 
-000000fa <is_pressed>:
+00000114 <is_pressed>:
 	}
 
 	return 0;
 }
 
 int is_pressed(int r, int c) {
-  fa:	cf 93       	push	r28
-  fc:	df 93       	push	r29
+ 114:	0f 93       	push	r16
+ 116:	1f 93       	push	r17
+ 118:	cf 93       	push	r28
+ 11a:	df 93       	push	r29
 
-	DDRA = 0x0F; // Set Data Direction Register A to output
-  fe:	2f e0       	ldi	r18, 0x0F	; 15
- 100:	2a bb       	out	0x1a, r18	; 26
+	DDRA = 0x00; // Set Data Direction Register A to output
+ 11c:	1a ba       	out	0x1a, r1	; 26
 	PORTA = 0x00; // Set all bits in Port A to low
- 102:	1b ba       	out	0x1b, r1	; 27
+ 11e:	1b ba       	out	0x1b, r1	; 27
      r = 3-r;
- 104:	23 e0       	ldi	r18, 0x03	; 3
- 106:	30 e0       	ldi	r19, 0x00	; 0
- 108:	e9 01       	movw	r28, r18
- 10a:	c8 1b       	sub	r28, r24
- 10c:	d9 0b       	sbc	r29, r25
+ 120:	03 e0       	ldi	r16, 0x03	; 3
+ 122:	10 e0       	ldi	r17, 0x00	; 0
+ 124:	e8 01       	movw	r28, r16
+ 126:	c8 1b       	sub	r28, r24
+ 128:	d9 0b       	sbc	r29, r25
 	 c = 3-c;
- 10e:	c9 01       	movw	r24, r18
- 110:	86 1b       	sub	r24, r22
- 112:	97 0b       	sbc	r25, r23
- 114:	bc 01       	movw	r22, r24
+ 12a:	06 1b       	sub	r16, r22
+ 12c:	17 0b       	sbc	r17, r23
 	// Set the row (r) to "0"
+	set_port(&DDRA, c);
+ 12e:	60 2f       	mov	r22, r16
+ 130:	8a e3       	ldi	r24, 0x3A	; 58
+ 132:	90 e0       	ldi	r25, 0x00	; 0
+ 134:	0e 94 53 00 	call	0xa6	; 0xa6 <set_port>
 	clear_port(&PORTA,c);
- 116:	8b e3       	ldi	r24, 0x3B	; 59
- 118:	90 e0       	ldi	r25, 0x00	; 0
- 11a:	0e 94 52 00 	call	0xa4	; 0xa4 <clear_port>
+ 138:	60 2f       	mov	r22, r16
+ 13a:	8b e3       	ldi	r24, 0x3B	; 59
+ 13c:	90 e0       	ldi	r25, 0x00	; 0
+ 13e:	0e 94 5f 00 	call	0xbe	; 0xbe <clear_port>
 	// Set the column (c) to "high"
+	clear_port(&DDRA, r+4);
+ 142:	cc 5f       	subi	r28, 0xFC	; 252
+ 144:	6c 2f       	mov	r22, r28
+ 146:	8a e3       	ldi	r24, 0x3A	; 58
+ 148:	90 e0       	ldi	r25, 0x00	; 0
+ 14a:	0e 94 5f 00 	call	0xbe	; 0xbe <clear_port>
 	set_port(&PORTA,r+4);
- 11e:	cc 5f       	subi	r28, 0xFC	; 252
- 120:	6c 2f       	mov	r22, r28
- 122:	8b e3       	ldi	r24, 0x3B	; 59
- 124:	90 e0       	ldi	r25, 0x00	; 0
- 126:	0e 94 46 00 	call	0x8c	; 0x8c <set_port>
-	wait_avr(1);
- 12a:	81 e0       	ldi	r24, 0x01	; 1
- 12c:	90 e0       	ldi	r25, 0x00	; 0
- 12e:	0e 94 6a 00 	call	0xd4	; 0xd4 <wait_avr>
+ 14e:	6c 2f       	mov	r22, r28
+ 150:	8b e3       	ldi	r24, 0x3B	; 59
+ 152:	90 e0       	ldi	r25, 0x00	; 0
+ 154:	0e 94 53 00 	call	0xa6	; 0xa6 <set_port>
+	wait_avr(10);
+ 158:	8a e0       	ldi	r24, 0x0A	; 10
+ 15a:	90 e0       	ldi	r25, 0x00	; 0
+ 15c:	0e 94 77 00 	call	0xee	; 0xee <wait_avr>
 	//DDRA = 0;
 	if (/*GPIO @ c = 0*/  !get_pin(&PINA,r+4)) {    // Check if the corresponding pin is high
- 132:	6c 2f       	mov	r22, r28
- 134:	89 e3       	ldi	r24, 0x39	; 57
- 136:	90 e0       	ldi	r25, 0x00	; 0
- 138:	0e 94 5f 00 	call	0xbe	; 0xbe <get_pin>
- 13c:	81 11       	cpse	r24, r1
- 13e:	03 c0       	rjmp	.+6      	; 0x146 <is_pressed+0x4c>
+ 160:	6c 2f       	mov	r22, r28
+ 162:	89 e3       	ldi	r24, 0x39	; 57
+ 164:	90 e0       	ldi	r25, 0x00	; 0
+ 166:	0e 94 6c 00 	call	0xd8	; 0xd8 <get_pin>
+ 16a:	81 11       	cpse	r24, r1
+ 16c:	07 c0       	rjmp	.+14     	; 0x17c <is_pressed+0x68>
+		wait_avr(10);
+ 16e:	8a e0       	ldi	r24, 0x0A	; 10
+ 170:	90 e0       	ldi	r25, 0x00	; 0
+ 172:	0e 94 77 00 	call	0xee	; 0xee <wait_avr>
 		return 1;
- 140:	81 e0       	ldi	r24, 0x01	; 1
- 142:	90 e0       	ldi	r25, 0x00	; 0
- 144:	02 c0       	rjmp	.+4      	; 0x14a <is_pressed+0x50>
+ 176:	81 e0       	ldi	r24, 0x01	; 1
+ 178:	90 e0       	ldi	r25, 0x00	; 0
+ 17a:	02 c0       	rjmp	.+4      	; 0x180 <is_pressed+0x6c>
 	}
 
 	return 0;
- 146:	80 e0       	ldi	r24, 0x00	; 0
- 148:	90 e0       	ldi	r25, 0x00	; 0
- 14a:	df 91       	pop	r29
- 14c:	cf 91       	pop	r28
- 14e:	08 95       	ret
+ 17c:	80 e0       	ldi	r24, 0x00	; 0
+ 17e:	90 e0       	ldi	r25, 0x00	; 0
+ 180:	df 91       	pop	r29
+ 182:	cf 91       	pop	r28
+ 184:	1f 91       	pop	r17
+ 186:	0f 91       	pop	r16
+ 188:	08 95       	ret
 
-00000150 <_exit>:
- 150:	f8 94       	cli
+0000018a <_exit>:
+ 18a:	f8 94       	cli
 
-00000152 <__stop_program>:
- 152:	ff cf       	rjmp	.-2      	; 0x152 <__stop_program>
+0000018c <__stop_program>:
+ 18c:	ff cf       	rjmp	.-2      	; 0x18c <__stop_program>
