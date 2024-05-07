@@ -3,29 +3,29 @@ GccApplication2.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         0000015e  00000000  00000000  00000054  2**1
+  0 .text         00000154  00000000  00000000  00000054  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         00000000  00800060  00800060  000001b2  2**0
+  1 .data         00000000  00800060  00800060  000001a8  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .comment      00000030  00000000  00000000  000001b2  2**0
+  2 .comment      00000030  00000000  00000000  000001a8  2**0
                   CONTENTS, READONLY
-  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000001e4  2**2
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000001d8  2**2
                   CONTENTS, READONLY
-  4 .debug_aranges 00000088  00000000  00000000  00000220  2**0
+  4 .debug_aranges 00000088  00000000  00000000  00000214  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_info   00000884  00000000  00000000  000002a8  2**0
+  5 .debug_info   0000090d  00000000  00000000  0000029c  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_abbrev 000006d2  00000000  00000000  00000b2c  2**0
+  6 .debug_abbrev 000006a2  00000000  00000000  00000ba9  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_line   000003fb  00000000  00000000  000011fe  2**0
+  7 .debug_line   0000047a  00000000  00000000  0000124b  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_frame  000000d8  00000000  00000000  000015fc  2**2
+  8 .debug_frame  000000dc  00000000  00000000  000016c8  2**2
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_str    00000369  00000000  00000000  000016d4  2**0
+  9 .debug_str    00000369  00000000  00000000  000017a4  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_loc    0000019b  00000000  00000000  00001a3d  2**0
+ 10 .debug_loc    00000164  00000000  00000000  00001b0d  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_ranges 00000058  00000000  00000000  00001bd8  2**0
+ 11 .debug_ranges 00000058  00000000  00000000  00001c71  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -60,223 +60,215 @@ Disassembly of section .text:
   5a:	d8 e0       	ldi	r29, 0x08	; 8
   5c:	de bf       	out	0x3e, r29	; 62
   5e:	cd bf       	out	0x3d, r28	; 61
-  60:	0e 94 a5 00 	call	0x14a	; 0x14a <main>
-  64:	0c 94 ad 00 	jmp	0x15a	; 0x15a <_exit>
+  60:	0e 94 36 00 	call	0x6c	; 0x6c <main>
+  64:	0c 94 a8 00 	jmp	0x150	; 0x150 <_exit>
 
 00000068 <__bad_interrupt>:
   68:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
 
-0000006c <set_port>:
+0000006c <main>:
+}
+
+int main(void)
+{
+    /* Replace with your application code */
+    DDRB = 0x02; 
+  6c:	82 e0       	ldi	r24, 0x02	; 2
+  6e:	87 bb       	out	0x17, r24	; 23
+	PORTB = 0;
+  70:	18 ba       	out	0x18, r1	; 24
+  72:	02 c0       	rjmp	.+4      	; 0x78 <main+0xc>
+    while (1) 
+    {
+        //int a = get_key();
+		while(is_pressed(3,3)){
+			PORTB = 0X02;
+  74:	82 e0       	ldi	r24, 0x02	; 2
+  76:	88 bb       	out	0x18, r24	; 24
+    DDRB = 0x02; 
+	PORTB = 0;
+    while (1) 
+    {
+        //int a = get_key();
+		while(is_pressed(3,3)){
+  78:	63 e0       	ldi	r22, 0x03	; 3
+  7a:	70 e0       	ldi	r23, 0x00	; 0
+  7c:	83 e0       	ldi	r24, 0x03	; 3
+  7e:	90 e0       	ldi	r25, 0x00	; 0
+  80:	0e 94 7d 00 	call	0xfa	; 0xfa <is_pressed>
+  84:	89 2b       	or	r24, r25
+  86:	b1 f7       	brne	.-20     	; 0x74 <main+0x8>
+			PORTB = 0X02;
+		}
+	   PORTB = 0; 		
+  88:	18 ba       	out	0x18, r1	; 24
+	}
+  8a:	f6 cf       	rjmp	.-20     	; 0x78 <main+0xc>
+
+0000008c <set_port>:
  */ 
 #include "utility.h"
-
+#include <avr/io.h>
 
 void set_port(char* portname, char portnum){
 	*portname = *portname | 0x01 << portnum;
-  6c:	fc 01       	movw	r30, r24
-  6e:	40 81       	ld	r20, Z
-  70:	21 e0       	ldi	r18, 0x01	; 1
-  72:	30 e0       	ldi	r19, 0x00	; 0
-  74:	02 c0       	rjmp	.+4      	; 0x7a <set_port+0xe>
-  76:	22 0f       	add	r18, r18
-  78:	33 1f       	adc	r19, r19
-  7a:	6a 95       	dec	r22
-  7c:	e2 f7       	brpl	.-8      	; 0x76 <set_port+0xa>
-  7e:	24 2b       	or	r18, r20
-  80:	20 83       	st	Z, r18
-  82:	08 95       	ret
+  8c:	fc 01       	movw	r30, r24
+  8e:	40 81       	ld	r20, Z
+  90:	21 e0       	ldi	r18, 0x01	; 1
+  92:	30 e0       	ldi	r19, 0x00	; 0
+  94:	02 c0       	rjmp	.+4      	; 0x9a <set_port+0xe>
+  96:	22 0f       	add	r18, r18
+  98:	33 1f       	adc	r19, r19
+  9a:	6a 95       	dec	r22
+  9c:	e2 f7       	brpl	.-8      	; 0x96 <set_port+0xa>
+  9e:	24 2b       	or	r18, r20
+  a0:	20 83       	st	Z, r18
+  a2:	08 95       	ret
 
-00000084 <clear_port>:
+000000a4 <clear_port>:
 	
 }
 
 void clear_port(char* portname, char portnum){
-  84:	fc 01       	movw	r30, r24
-	*portname = *portname & (!(0x01 << portnum));
-  86:	80 81       	ld	r24, Z
-  88:	21 e0       	ldi	r18, 0x01	; 1
-  8a:	30 e0       	ldi	r19, 0x00	; 0
-  8c:	02 c0       	rjmp	.+4      	; 0x92 <clear_port+0xe>
-  8e:	22 0f       	add	r18, r18
-  90:	33 1f       	adc	r19, r19
-  92:	6a 95       	dec	r22
-  94:	e2 f7       	brpl	.-8      	; 0x8e <clear_port+0xa>
-  96:	91 e0       	ldi	r25, 0x01	; 1
-  98:	23 2b       	or	r18, r19
-  9a:	09 f0       	breq	.+2      	; 0x9e <clear_port+0x1a>
-  9c:	90 e0       	ldi	r25, 0x00	; 0
-  9e:	98 23       	and	r25, r24
-  a0:	90 83       	st	Z, r25
-  a2:	08 95       	ret
+  a4:	fc 01       	movw	r30, r24
+	*portname = *portname & (~(0x01 << portnum));
+  a6:	90 81       	ld	r25, Z
+  a8:	21 e0       	ldi	r18, 0x01	; 1
+  aa:	30 e0       	ldi	r19, 0x00	; 0
+  ac:	02 c0       	rjmp	.+4      	; 0xb2 <clear_port+0xe>
+  ae:	22 0f       	add	r18, r18
+  b0:	33 1f       	adc	r19, r19
+  b2:	6a 95       	dec	r22
+  b4:	e2 f7       	brpl	.-8      	; 0xae <clear_port+0xa>
+  b6:	20 95       	com	r18
+  b8:	29 23       	and	r18, r25
+  ba:	20 83       	st	Z, r18
+  bc:	08 95       	ret
 
-000000a4 <get_pin>:
+000000be <get_pin>:
 	
 }
 
 char get_pin(char* portname, char portnum){
 	
 	return *portname & 0x01 << portnum;
-  a4:	21 e0       	ldi	r18, 0x01	; 1
-  a6:	30 e0       	ldi	r19, 0x00	; 0
-  a8:	02 c0       	rjmp	.+4      	; 0xae <get_pin+0xa>
-  aa:	22 0f       	add	r18, r18
-  ac:	33 1f       	adc	r19, r19
-  ae:	6a 95       	dec	r22
-  b0:	e2 f7       	brpl	.-8      	; 0xaa <get_pin+0x6>
-  b2:	fc 01       	movw	r30, r24
-  b4:	80 81       	ld	r24, Z
-  b6:	82 23       	and	r24, r18
-  b8:	08 95       	ret
+  be:	21 e0       	ldi	r18, 0x01	; 1
+  c0:	30 e0       	ldi	r19, 0x00	; 0
+  c2:	02 c0       	rjmp	.+4      	; 0xc8 <get_pin+0xa>
+  c4:	22 0f       	add	r18, r18
+  c6:	33 1f       	adc	r19, r19
+  c8:	6a 95       	dec	r22
+  ca:	e2 f7       	brpl	.-8      	; 0xc4 <get_pin+0x6>
+  cc:	fc 01       	movw	r30, r24
+  ce:	80 81       	ld	r24, Z
+}
+  d0:	82 23       	and	r24, r18
+  d2:	08 95       	ret
 
-000000ba <is_pressed>:
+000000d4 <wait_avr>:
+
+void wait_avr(unsigned short msec){
+	TCCR0 = 3;
+  d4:	23 e0       	ldi	r18, 0x03	; 3
+  d6:	23 bf       	out	0x33, r18	; 51
+	while(msec --){
+  d8:	09 c0       	rjmp	.+18     	; 0xec <wait_avr+0x18>
+		TCNT0 = (unsigned char)(256 - (XTAL_FRQ/64)*0.001);
+  da:	83 e8       	ldi	r24, 0x83	; 131
+  dc:	82 bf       	out	0x32, r24	; 50
+		SET_BIT(TIFR, TOV0);
+  de:	88 b7       	in	r24, 0x38	; 56
+  e0:	81 60       	ori	r24, 0x01	; 1
+  e2:	88 bf       	out	0x38, r24	; 56
+		while(!GET_BIT(TIFR, TOV0));
+  e4:	08 b6       	in	r0, 0x38	; 56
+  e6:	00 fe       	sbrs	r0, 0
+  e8:	fd cf       	rjmp	.-6      	; 0xe4 <wait_avr+0x10>
+	return *portname & 0x01 << portnum;
+}
+
+void wait_avr(unsigned short msec){
+	TCCR0 = 3;
+	while(msec --){
+  ea:	c9 01       	movw	r24, r18
+  ec:	9c 01       	movw	r18, r24
+  ee:	21 50       	subi	r18, 0x01	; 1
+  f0:	31 09       	sbc	r19, r1
+  f2:	89 2b       	or	r24, r25
+  f4:	91 f7       	brne	.-28     	; 0xda <wait_avr+0x6>
+		TCNT0 = (unsigned char)(256 - (XTAL_FRQ/64)*0.001);
+		SET_BIT(TIFR, TOV0);
+		while(!GET_BIT(TIFR, TOV0));
+	}
+	TCCR0 = 0;
+  f6:	13 be       	out	0x33, r1	; 51
+  f8:	08 95       	ret
+
+000000fa <is_pressed>:
 	}
 
 	return 0;
 }
 
 int is_pressed(int r, int c) {
-  ba:	cf 93       	push	r28
-  bc:	c6 2f       	mov	r28, r22
+  fa:	cf 93       	push	r28
+  fc:	df 93       	push	r29
 
-	DDRA = 1; // Set Data Direction Register A to output
-  be:	91 e0       	ldi	r25, 0x01	; 1
-  c0:	9a bb       	out	0x1a, r25	; 26
-	PORTA = 0; // Set all bits in Port A to low
-  c2:	1b ba       	out	0x1b, r1	; 27
-
+	DDRA = 0x0F; // Set Data Direction Register A to output
+  fe:	2f e0       	ldi	r18, 0x0F	; 15
+ 100:	2a bb       	out	0x1a, r18	; 26
+	PORTA = 0x00; // Set all bits in Port A to low
+ 102:	1b ba       	out	0x1b, r1	; 27
+     r = 3-r;
+ 104:	23 e0       	ldi	r18, 0x03	; 3
+ 106:	30 e0       	ldi	r19, 0x00	; 0
+ 108:	e9 01       	movw	r28, r18
+ 10a:	c8 1b       	sub	r28, r24
+ 10c:	d9 0b       	sbc	r29, r25
+	 c = 3-c;
+ 10e:	c9 01       	movw	r24, r18
+ 110:	86 1b       	sub	r24, r22
+ 112:	97 0b       	sbc	r25, r23
+ 114:	bc 01       	movw	r22, r24
 	// Set the row (r) to "0"
-	clear_port(&PORTA, r+4);
-  c4:	64 e0       	ldi	r22, 0x04	; 4
-  c6:	68 0f       	add	r22, r24
-  c8:	8b e3       	ldi	r24, 0x3B	; 59
-  ca:	90 e0       	ldi	r25, 0x00	; 0
-  cc:	0e 94 42 00 	call	0x84	; 0x84 <clear_port>
+	clear_port(&PORTA,c);
+ 116:	8b e3       	ldi	r24, 0x3B	; 59
+ 118:	90 e0       	ldi	r25, 0x00	; 0
+ 11a:	0e 94 52 00 	call	0xa4	; 0xa4 <clear_port>
 	// Set the column (c) to "high"
-	set_port(&PORTA,c);
-  d0:	6c 2f       	mov	r22, r28
-  d2:	8b e3       	ldi	r24, 0x3B	; 59
-  d4:	90 e0       	ldi	r25, 0x00	; 0
-  d6:	0e 94 36 00 	call	0x6c	; 0x6c <set_port>
-	
-	DDRA = 0;
-  da:	1a ba       	out	0x1a, r1	; 26
-	if (/*GPIO @ c = 0*/  get_pin(PINA,c)) {    // Check if the corresponding pin is high
-  dc:	89 b3       	in	r24, 0x19	; 25
-  de:	6c 2f       	mov	r22, r28
-  e0:	90 e0       	ldi	r25, 0x00	; 0
-  e2:	0e 94 52 00 	call	0xa4	; 0xa4 <get_pin>
-  e6:	88 23       	and	r24, r24
-  e8:	19 f0       	breq	.+6      	; 0xf0 <is_pressed+0x36>
+	set_port(&PORTA,r+4);
+ 11e:	cc 5f       	subi	r28, 0xFC	; 252
+ 120:	6c 2f       	mov	r22, r28
+ 122:	8b e3       	ldi	r24, 0x3B	; 59
+ 124:	90 e0       	ldi	r25, 0x00	; 0
+ 126:	0e 94 46 00 	call	0x8c	; 0x8c <set_port>
+	wait_avr(1);
+ 12a:	81 e0       	ldi	r24, 0x01	; 1
+ 12c:	90 e0       	ldi	r25, 0x00	; 0
+ 12e:	0e 94 6a 00 	call	0xd4	; 0xd4 <wait_avr>
+	//DDRA = 0;
+	if (/*GPIO @ c = 0*/  !get_pin(&PINA,r+4)) {    // Check if the corresponding pin is high
+ 132:	6c 2f       	mov	r22, r28
+ 134:	89 e3       	ldi	r24, 0x39	; 57
+ 136:	90 e0       	ldi	r25, 0x00	; 0
+ 138:	0e 94 5f 00 	call	0xbe	; 0xbe <get_pin>
+ 13c:	81 11       	cpse	r24, r1
+ 13e:	03 c0       	rjmp	.+6      	; 0x146 <is_pressed+0x4c>
 		return 1;
-  ea:	81 e0       	ldi	r24, 0x01	; 1
-  ec:	90 e0       	ldi	r25, 0x00	; 0
-  ee:	02 c0       	rjmp	.+4      	; 0xf4 <is_pressed+0x3a>
+ 140:	81 e0       	ldi	r24, 0x01	; 1
+ 142:	90 e0       	ldi	r25, 0x00	; 0
+ 144:	02 c0       	rjmp	.+4      	; 0x14a <is_pressed+0x50>
 	}
 
 	return 0;
-  f0:	80 e0       	ldi	r24, 0x00	; 0
-  f2:	90 e0       	ldi	r25, 0x00	; 0
-  f4:	cf 91       	pop	r28
-  f6:	08 95       	ret
+ 146:	80 e0       	ldi	r24, 0x00	; 0
+ 148:	90 e0       	ldi	r25, 0x00	; 0
+ 14a:	df 91       	pop	r29
+ 14c:	cf 91       	pop	r28
+ 14e:	08 95       	ret
 
-000000f8 <get_key>:
-#include "keypad.h"
-#include <avr/io.h>
- 
- 
- 
-int get_key() {
-  f8:	0f 93       	push	r16
-  fa:	1f 93       	push	r17
-  fc:	cf 93       	push	r28
-  fe:	df 93       	push	r29
-	int i, j;
+00000150 <_exit>:
+ 150:	f8 94       	cli
 
-	for (i = 0; i < 4; i++) {
- 100:	00 e0       	ldi	r16, 0x00	; 0
- 102:	10 e0       	ldi	r17, 0x00	; 0
- 104:	18 c0       	rjmp	.+48     	; 0x136 <get_key+0x3e>
-		for (j = 0; j < 4; j++) {
-			if (is_pressed(i, j)) {
- 106:	be 01       	movw	r22, r28
- 108:	c8 01       	movw	r24, r16
- 10a:	0e 94 5d 00 	call	0xba	; 0xba <is_pressed>
- 10e:	89 2b       	or	r24, r25
- 110:	49 f0       	breq	.+18     	; 0x124 <get_key+0x2c>
-				return i * 4 + j + 1;
- 112:	c8 01       	movw	r24, r16
- 114:	88 0f       	add	r24, r24
- 116:	99 1f       	adc	r25, r25
- 118:	88 0f       	add	r24, r24
- 11a:	99 1f       	adc	r25, r25
- 11c:	8c 0f       	add	r24, r28
- 11e:	9d 1f       	adc	r25, r29
- 120:	01 96       	adiw	r24, 0x01	; 1
- 122:	0e c0       	rjmp	.+28     	; 0x140 <get_key+0x48>
- 
-int get_key() {
-	int i, j;
-
-	for (i = 0; i < 4; i++) {
-		for (j = 0; j < 4; j++) {
- 124:	21 96       	adiw	r28, 0x01	; 1
- 126:	02 c0       	rjmp	.+4      	; 0x12c <get_key+0x34>
- 128:	c0 e0       	ldi	r28, 0x00	; 0
- 12a:	d0 e0       	ldi	r29, 0x00	; 0
- 12c:	c4 30       	cpi	r28, 0x04	; 4
- 12e:	d1 05       	cpc	r29, r1
- 130:	54 f3       	brlt	.-44     	; 0x106 <get_key+0xe>
- 
- 
-int get_key() {
-	int i, j;
-
-	for (i = 0; i < 4; i++) {
- 132:	0f 5f       	subi	r16, 0xFF	; 255
- 134:	1f 4f       	sbci	r17, 0xFF	; 255
- 136:	04 30       	cpi	r16, 0x04	; 4
- 138:	11 05       	cpc	r17, r1
- 13a:	b4 f3       	brlt	.-20     	; 0x128 <get_key+0x30>
-				return i * 4 + j + 1;
-			}
-		}
-	}
-
-	return 0;
- 13c:	80 e0       	ldi	r24, 0x00	; 0
- 13e:	90 e0       	ldi	r25, 0x00	; 0
-}
- 140:	df 91       	pop	r29
- 142:	cf 91       	pop	r28
- 144:	1f 91       	pop	r17
- 146:	0f 91       	pop	r16
- 148:	08 95       	ret
-
-0000014a <main>:
-}
-
-int main(void)
-{
-    /* Replace with your application code */
-    DDRB = 1; 
- 14a:	81 e0       	ldi	r24, 0x01	; 1
- 14c:	87 bb       	out	0x17, r24	; 23
-	PORTB = 0;
- 14e:	18 ba       	out	0x18, r1	; 24
-    while (1) 
-    {
-        int a = get_key();
- 150:	0e 94 7c 00 	call	0xf8	; 0xf8 <get_key>
-		//set_port(&PORTB, 0);
-	//	PORTB = PORTB | (0x01 << 1);
-	
-		PORTB = 0x02;
- 154:	82 e0       	ldi	r24, 0x02	; 2
- 156:	88 bb       	out	0x18, r24	; 24
- 158:	fb cf       	rjmp	.-10     	; 0x150 <main+0x6>
-
-0000015a <_exit>:
- 15a:	f8 94       	cli
-
-0000015c <__stop_program>:
- 15c:	ff cf       	rjmp	.-2      	; 0x15c <__stop_program>
+00000152 <__stop_program>:
+ 152:	ff cf       	rjmp	.-2      	; 0x152 <__stop_program>

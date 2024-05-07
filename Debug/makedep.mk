@@ -2,13 +2,13 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
+main.c
+
 utility.c
 
 keypad.c
 
 lcd.c
-
-main.c
 
 timing.c
 
