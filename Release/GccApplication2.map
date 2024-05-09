@@ -72,8 +72,6 @@ Discarded input sections
  .text          0x00000000        0x0 lcd.o
  .data          0x00000000        0x0 lcd.o
  .bss           0x00000000        0x0 lcd.o
- .text.lcd_init
-                0x00000000       0x4e lcd.o
  .text.lcd_puts1
                 0x00000000       0x20 lcd.o
  .text          0x00000000        0x0 timing.o
@@ -328,7 +326,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x1140
+.text           0x00000000     0x11b8
  *(.vectors)
  .vectors       0x00000000       0x54 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega32/avr5/crtatmega32.o
                 0x00000000                __vector_default
@@ -441,106 +439,109 @@ END GROUP
                 0x00000454       0x4e main.o
                 0x00000454                hr_12_sm
  .text.main_driver
-                0x000004a2       0x70 main.o
+                0x000004a2       0x9a main.o
                 0x000004a2                main_driver
  .text.startup.main
-                0x00000512        0x4 main.o
-                0x00000512                main
+                0x0000053c        0x4 main.o
+                0x0000053c                main
  .text.set_port
-                0x00000516       0x16 utility.o
-                0x00000516                set_port
+                0x00000540       0x16 utility.o
+                0x00000540                set_port
  .text.clear_port
-                0x0000052c       0x18 utility.o
-                0x0000052c                clear_port
- .text.get_pin  0x00000544       0x14 utility.o
-                0x00000544                get_pin
+                0x00000556       0x18 utility.o
+                0x00000556                clear_port
+ .text.get_pin  0x0000056e       0x14 utility.o
+                0x0000056e                get_pin
  .text.wait_avr
-                0x00000558       0x1e utility.o
-                0x00000558                wait_avr
+                0x00000582       0x1e utility.o
+                0x00000582                wait_avr
  .text.is_pressed
-                0x00000576       0x80 keypad.o
-                0x00000576                is_pressed
- .text.get_key  0x000005f6       0x4a keypad.o
-                0x000005f6                get_key
+                0x000005a0       0x80 keypad.o
+                0x000005a0                is_pressed
+ .text.get_key  0x00000620       0x4a keypad.o
+                0x00000620                get_key
  .text.get_char
-                0x00000640       0x22 keypad.o
-                0x00000640                get_char
- .text.output   0x00000662       0x1e lcd.o
- .text.write    0x00000680       0x1e lcd.o
- .text.lcd_clr  0x0000069e        0x8 lcd.o
-                0x0000069e                lcd_clr
- .text.lcd_pos  0x000006a6       0x28 lcd.o
-                0x000006a6                lcd_pos
- .text.lcd_put  0x000006ce        0x6 lcd.o
-                0x000006ce                lcd_put
+                0x0000066a       0x22 keypad.o
+                0x0000066a                get_char
+ .text.output   0x0000068c       0x1e lcd.o
+ .text.write    0x000006aa       0x1e lcd.o
+ .text.lcd_init
+                0x000006c8       0x4e lcd.o
+                0x000006c8                lcd_init
+ .text.lcd_clr  0x00000716        0x8 lcd.o
+                0x00000716                lcd_clr
+ .text.lcd_pos  0x0000071e       0x28 lcd.o
+                0x0000071e                lcd_pos
+ .text.lcd_put  0x00000746        0x6 lcd.o
+                0x00000746                lcd_put
  .text.lcd_puts2
-                0x000006d4       0x1a lcd.o
-                0x000006d4                lcd_puts2
+                0x0000074c       0x1a lcd.o
+                0x0000074c                lcd_puts2
  .text.conv_twelve_to_military
-                0x000006ee       0x78 timing.o
-                0x000006ee                conv_twelve_to_military
+                0x00000766       0x78 timing.o
+                0x00000766                conv_twelve_to_military
  .text.conv_military_to_twelve
-                0x00000766       0x6e timing.o
-                0x00000766                conv_military_to_twelve
+                0x000007de       0x6e timing.o
+                0x000007de                conv_military_to_twelve
  .text.print_dt_twelve
-                0x000007d4       0xde timing.o
-                0x000007d4                print_dt_twelve
+                0x0000084c       0xde timing.o
+                0x0000084c                print_dt_twelve
  .text.init_dt_full
-                0x000008b2       0x1e timing.o
-                0x000008b2                init_dt_full
+                0x0000092a       0x1e timing.o
+                0x0000092a                init_dt_full
  .text.init_dt_twelve_full
-                0x000008d0       0x24 timing.o
-                0x000008d0                init_dt_twelve_full
+                0x00000948       0x24 timing.o
+                0x00000948                init_dt_twelve_full
  .text.is_leap_yr
-                0x000008f4       0x30 timing.o
-                0x000008f4                is_leap_yr
+                0x0000096c       0x30 timing.o
+                0x0000096c                is_leap_yr
  .text.char_in_array
-                0x00000924       0x1c timing.o
-                0x00000924                char_in_array
+                0x0000099c       0x1c timing.o
+                0x0000099c                char_in_array
  .text.get_max_days_in_month
-                0x00000940       0x54 timing.o
-                0x00000940                get_max_days_in_month
+                0x000009b8       0x54 timing.o
+                0x000009b8                get_max_days_in_month
  .text.advance_dt
-                0x00000994       0x72 timing.o
-                0x00000994                advance_dt
+                0x00000a0c       0x72 timing.o
+                0x00000a0c                advance_dt
  .text.advance_dt_twelve
-                0x00000a06       0x84 timing.o
-                0x00000a06                advance_dt_twelve
+                0x00000a7e       0x84 timing.o
+                0x00000a7e                advance_dt_twelve
  .text.print_dt
-                0x00000a8a       0xb6 timing.o
-                0x00000a8a                print_dt
+                0x00000b02       0xb6 timing.o
+                0x00000b02                print_dt
  .text.libgcc.div
-                0x00000b40       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
-                0x00000b40                __udivmodhi4
+                0x00000bb8       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
+                0x00000bb8                __udivmodhi4
  .text.avr-libc
-                0x00000b68       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(sprintf.o)
-                0x00000b68                sprintf
+                0x00000be0       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(sprintf.o)
+                0x00000be0                sprintf
  .text.avr-libc
-                0x00000bac      0x3c2 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
-                0x00000bac                vfprintf
+                0x00000c24      0x3c2 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
+                0x00000c24                vfprintf
  .text.avr-libc
-                0x00000f6e       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
-                0x00000f6e                strnlen_P
+                0x00000fe6       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
+                0x00000fe6                strnlen_P
  .text.avr-libc
-                0x00000f84       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(strnlen.o)
-                0x00000f84                strnlen
+                0x00000ffc       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(strnlen.o)
+                0x00000ffc                strnlen
  .text.avr-libc
-                0x00000f9a       0x78 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(fputc.o)
-                0x00000f9a                fputc
+                0x00001012       0x78 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(fputc.o)
+                0x00001012                fputc
  .text.avr-libc
-                0x00001012       0xbc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(ultoa_invert.o)
-                0x00001012                __ultoa_invert
+                0x0000108a       0xbc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(ultoa_invert.o)
+                0x0000108a                __ultoa_invert
  .text.libgcc.prologue
-                0x000010ce       0x38 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_prologue.o)
-                0x000010ce                __prologue_saves__
+                0x00001146       0x38 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_prologue.o)
+                0x00001146                __prologue_saves__
  .text.libgcc.prologue
-                0x00001106       0x36 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_epilogue.o)
-                0x00001106                __epilogue_restores__
-                0x0000113c                . = ALIGN (0x2)
+                0x0000117e       0x36 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_epilogue.o)
+                0x0000117e                __epilogue_restores__
+                0x000011b4                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x0000113c        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
-                0x0000113c                _exit
-                0x0000113c                exit
+ .fini9         0x000011b4        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x000011b4                _exit
+                0x000011b4                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -559,11 +560,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x0000113c        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x000011b4        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00001140                _etext = .
+                0x000011b8                _etext = .
 
-.data           0x00800060       0x70 load address 0x00001140
+.data           0x00800060       0x70 load address 0x000011b8
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -600,8 +601,8 @@ END GROUP
                 0x008000d0                CURR_TIME_SYSTEM
  *(COMMON)
                 0x008000d1                PROVIDE (__bss_end, .)
-                0x00001140                __data_load_start = LOADADDR (.data)
-                0x000011b0                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x000011b8                __data_load_start = LOADADDR (.data)
+                0x00001228                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x008000d1        0x0
                 [!provide]                PROVIDE (__noinit_start, .)

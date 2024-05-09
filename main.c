@@ -30,7 +30,7 @@
 #define YEAR_LENGTH 2
 #define TIME_LENGTH 2
 #define AM_LENGTH 1
-#define WAIT_BTWN_INPUTS_MS 50
+#define WAIT_BTWN_INPUTS_MS 5
 #define CHANGE_TIME_SYSTEM 'A'
 #define CHANGE_TO_SET_DATE_TIME '#'
 
@@ -308,14 +308,15 @@ DateTime_Twelve_hr* hr_12_sm (DateTime_Twelve_hr* dt_12){
 void main_driver() {
 	//initial state
 	//wait for driver initialization
+	lcd_init(); 
+	lcd_clr();
 	wait_for_init_mode_change();
 
 	//initialize these two, this code should be refactored using non-malloced shit
 	// DateTime* dt_24 = malloc(sizeof(DateTime_Twelve_hr));
 	// DateTime_Twelve_hr* dt_12 = (DateTime_Twelve_hr*) malloc(sizeof(DateTime_Twelve_hr));
 
-	lcd_init(); 
-	lcd_clr();
+	
 
 
 	DateTime dt_24;
@@ -334,9 +335,10 @@ void main_driver() {
 	while ( 1 ) {
 		if (CURR_TIME_SYSTEM == HR_12) {
 			dt_24 = conv_twelve_to_military(hr_12_sm(&dt_12));
-
+			lcd_clr();
 			} else if (CURR_TIME_SYSTEM == HR_24) {
 			dt_12 = conv_military_to_twelve( hr_24_sm(&dt_24));
+			lcd_clr();
 		}
 	}
 
