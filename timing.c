@@ -240,7 +240,7 @@ void print_dt(const DateTime *dt) {
 	// Do similar thing to print time on bottom row.
 	
 	lcd_pos(1,0);
-	sprintf(buf, "%04d-%02d-%02d",
+	sprintf(buf, "%02d:%02d:%02d",
 	dt->hour,
 	dt->minute,
 	dt->second);

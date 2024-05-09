@@ -189,11 +189,11 @@ DateTime build_dt_24() {
 	do {
 		lcd_clr();
 		lcd_pos(0,0);
-		lcd_puts2("yr/mm/d:");
-		wait_avr(2000);
-		month = (mini_uint) get_number(MONTH_LENGTH,0,0);
-		day = (mini_uint) get_number(DAY_LENGTH,0,MONTH_LENGTH);
-		yr = get_number(YEAR_LENGTH,0,MONTH_LENGTH + YEAR_LENGTH );
+		lcd_puts2("mm/dd/yyyy");
+		wait_avr(WAIT_BTWN_INPUTS_MS );
+		month = (mini_uint) get_number(MONTH_LENGTH,1,0);
+		day = (mini_uint) get_number(DAY_LENGTH,1,MONTH_LENGTH + 1);
+		yr = get_number(YEAR_LENGTH,1,MONTH_LENGTH + DAY_LENGTH + 2 );
 	} while (!validate_month_day_yr(yr, month, day));
 
 	
@@ -204,11 +204,11 @@ DateTime build_dt_24() {
 	do {
 		lcd_clr();
 		lcd_pos(0,0);
-		lcd_puts2("hr/min/s:");
-		wait_avr(2000);
+		lcd_puts2("mm:hh:ss");
+		wait_avr(WAIT_BTWN_INPUTS_MS );
 		mins = (mini_uint) get_number(TIME_LENGTH,1,0);
-		hrs = (mini_uint) get_number(TIME_LENGTH,1,TIME_LENGTH);
-		secs = (mini_uint) get_number(TIME_LENGTH,1,TIME_LENGTH*2);
+		hrs = (mini_uint) get_number(TIME_LENGTH,1,TIME_LENGTH + 1);
+		secs = (mini_uint) get_number(TIME_LENGTH,1,TIME_LENGTH*2 + 2);
 	} while (!validate_min(mins) || !validate_hr_24(hrs) || !validate_sec(secs));
 	
 	init_dt_full(&tmp, yr, month, day, hrs, mins, secs);
@@ -224,11 +224,11 @@ DateTime_Twelve_hr build_dt_12() {
 	do {
 		lcd_clr();
 		lcd_pos(0,0);
-		lcd_puts2("yr/mm/d:");
-		wait_avr(2000);
-		month = (mini_uint) get_number(MONTH_LENGTH,0,0);
-		day = (mini_uint) get_number(DAY_LENGTH,0,MONTH_LENGTH);
-		yr = get_number(YEAR_LENGTH,0,MONTH_LENGTH + YEAR_LENGTH );
+		lcd_puts2("mm/dd/yyyy");
+		wait_avr(WAIT_BTWN_INPUTS_MS );
+		month = (mini_uint) get_number(MONTH_LENGTH,1,0);
+		day = (mini_uint) get_number(DAY_LENGTH,1,MONTH_LENGTH + 1);
+		yr = get_number(YEAR_LENGTH,1,MONTH_LENGTH + DAY_LENGTH  + 2);
 	} while (!validate_month_day_yr(yr, month, day));
 
 	
@@ -240,12 +240,12 @@ DateTime_Twelve_hr build_dt_12() {
 	do {
 		lcd_clr();
 		lcd_pos(0,0);
-		lcd_puts2("hr/min/s:");
-		wait_avr(2000);
+		lcd_puts2("mm:hh:ss");
+		wait_avr(WAIT_BTWN_INPUTS_MS);
 		mins = (mini_uint) get_number(TIME_LENGTH,1,0);
-		hrs = (mini_uint) get_number(TIME_LENGTH,1,TIME_LENGTH);
-		secs = (mini_uint) get_number(TIME_LENGTH,1,TIME_LENGTH*2);
-		am = (mini_uint) get_number(AM_LENGTH,1, TIME_LENGTH*3);
+		hrs = (mini_uint) get_number(TIME_LENGTH,1,TIME_LENGTH + 1);
+		secs = (mini_uint) get_number(TIME_LENGTH,1,TIME_LENGTH*2 + 2);
+		am = (mini_uint) get_number(AM_LENGTH, 1, TIME_LENGTH*3 + 3);
 	} while (!validate_min(mins) || !validate_hr_24(hrs) || !validate_sec(secs));
 	
 
