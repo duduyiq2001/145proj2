@@ -314,6 +314,9 @@ void main_driver() {
 	// DateTime* dt_24 = malloc(sizeof(DateTime_Twelve_hr));
 	// DateTime_Twelve_hr* dt_12 = (DateTime_Twelve_hr*) malloc(sizeof(DateTime_Twelve_hr));
 
+	lcd_init(); 
+	lcd_clr();
+
 
 	DateTime dt_24;
 	DateTime_Twelve_hr dt_12;
